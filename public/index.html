@@ -8,7 +8,11 @@
 <head>
   <title>University of California, Davis | UC Davis</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQcCUFBWABABVVFWDwMAVA=="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):w?w(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var b=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,b),b.prototype=p.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!w&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("index.html")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script>
+<meta charset="utf-8" />
+<!-- BEGIN TRACKJS -->
+<script type="text/javascript">window._trackJs = { token: 'a305150ee00b4c9bb6ac20e5c2e4b28b' };</script>
+<script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
+<!-- END TRACKJS -->
 <link rel="apple-touch-icon" href="sites/all/themes/ucd_one/apple-touch-icon-180x180.png" sizes="180x180" />
 <link rel="apple-touch-icon" href="sites/all/themes/ucd_one/apple-touch-icon-114x114.png" sizes="114x114" />
 <meta http-equiv="cleartype" content="on" />
@@ -112,7 +116,7 @@
       <div class="l-container">
         <div class="l-branding">
                       <a href="index.html" title="Home" class="site-logo" rel="home"><img src="sites/all/themes/ucd_one/logo.svg" class="logo" alt="Home" /></a>
-          
+
                   </div>
 
               </div>
@@ -135,7 +139,7 @@
 <input type="hidden" name="form_id" value="search_form" />
 </div></form>              </div>
             </div>
-          
+
                       <nav class="primary-nav">
               <ul class="menu"><li class="first expanded is-visible"><a href="about.html">About Us<span class="submenu-toggle"><span class="submenu-toggle__icon">+</span></span></a><ul class="menu"><li class="first expanded is-visible"><a href="about/university-initiatives.html">Initiatives<span class="submenu-toggle"><span class="submenu-toggle__icon">+</span></span></a><ul class="menu"><li class="first leaf"><a href="about/university-initiatives/2020-initiative.html">2020 Initiative</a></li>
 <li class="expanded"><a href="dialogue.html">Dialogue and Discernment<span class="submenu-toggle"><span class="submenu-toggle__icon">+</span></span></a><ul class="menu"><li class="first leaf"><a href="dialogue/calendar.html">Dialogue and Discernment Series Calendar</a></li>
@@ -441,8 +445,8 @@
 </ul></li>
 </ul></li>
 </ul>            </nav>
-          
-                    
+
+
                       <div class="l-quick-links">
               <h2><a class="quick-links__title">Quick Links<span class="submenu-toggle"><span class="submenu-toggle__icon">+</span></span></a></h2>
               <nav class="quick-links is-hidden--visually">
@@ -466,7 +470,7 @@
 <li class="menu-3313 last"><a href="http://ucdavisstores.com/" title="">UC Davis Stores</a></li>
 </ul>              </nav>
             </div>
-          
+
         </div>
       </div>
     </div>
@@ -474,20 +478,21 @@
 
     <div class="l-main " >
       <a id="main-content"></a>
-                  
+
 
     <div class="l-container">
       <div class="l-content" role="main">
-                                                                  
+
 <div class="panel-display moscone clearfix radix-moscone" >
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12 radix-layouts-header panel-panel">
+
         <div class="panel-panel-inner">
           <div class="l-full-width clearfix bg-opaque space-below--large"><div class="panel-pane pane-fieldable-panels-pane pane-current-10 hero-banner--middle-left hero-banner--brand-gold hero-banner--t-size-7 hero-banner--b-size-2 panel-pane--flush pane-bundle-ucdedu-hero-banner">
-  
-      
+
+
     <div class="pane-content ">
     <section id="ucd-hb-10" class="fieldable-panels-pane hero-banner">
   <div class="hero-banner__media">
@@ -498,15 +503,15 @@
       <div class="field field--name-field-video-file field--type-file field--label-hidden"><div class="field__items"><div class="field__item even"><div id="file-15378" class="file file-video file-video-youtube" class="file file-video file-video-youtube">
 
         <h2 class="element-invisible"><a href="files/who-we-are.html">This Is Who We Are</a></h2>
-    
-  
+
+
   <div class="content">
     <div class="media-youtube-video media-youtube-2">
   <iframe class="media-youtube-player" width="640" height="390" title="This Is Who We Are" src="https://www.youtube.com/embed/4xSyF6VDuIM?wmode=opaque&amp;modestbranding=1&amp;rel=0" frameborder="0" allowfullscreen>Video of This Is Who We Are</iframe>
 </div>
   </div>
 
-  
+
 </div>
 </div></div></div>    </div>
 
@@ -522,13 +527,13 @@
                                 <a href="about/visit/index.html#home-hero" class="btn--invert">Schedule a visit today!</a>
                   </div>
           </div>
-  
+
 </section>
   </div>
     </div>
 <div class="l-container"><div class="panel-pane pane-priority-links box--small category-brand--admin-blue pane-title--plain pane-title--bullhorn panel-pane--flush">
-  
-      
+
+
     <div class="pane-content ">
     <div class="priority-links pack">
   <a href="majors/index.html#home-priority-link" class="vertical-link pack__item priority-links--badge">
@@ -566,33 +571,33 @@
 </div></div>        </div>
       </div>
     </div>
-    
+
     <div class="row">
       <div class="col-md-4 radix-layouts-sidebar panel-panel">
         <div class="panel-panel-inner">
           <div class="panel-pane pane-views-panes pane-ucdedu-trending-articles-panel-pane-1 box category-brand--admin-blue pane-title--icon pane-title--line-chart">
-  
+
       <h2 class="pane-title">
     Trending  </h2>
-    
+
     <div class="pane-content ">
     <div class="view view-ucdedu-trending-articles view-id-ucdedu_trending_articles view-display-id-panel_pane_1 view-dom-id-ece5077198353b3e1cb6bc353e2292e1">
-        
-  
-  
+
+
+
       <div class="view-content">
         <div class="views-row views-row-1 views-row-odd views-row-first clearfix">
     <article about="/news/michael-chapman-john-and-lois-crowe-and-gurdev-khush-be-honored-uc-davis-medal" typeof="schema:Article sioc:Item foaf:Document" role="article" class="node node--sitefarm-article node--media-list node--sitefarm-article--media-list vm-media-list media node--article category-brand--">
       <div class="media__figure category-brand__thumbnail">
       <div class="field field--name-field-featured-image field--type-image field--label-hidden"><div class="field__items"><div class="field__item even" rel="schema:image" resource="sites/default/files/styles/panopoly_image_square/public/images/article/20180421-ucdavismedal-01crop21f1.jpg?itok=45sYif7_"><img class="panopoly-image-square" typeof="foaf:Image" src="sites/default/files/styles/panopoly_image_square/public/images/article/20180421-ucdavismedal-01crop21f1.jpg?itok=45sYif7_" width="200" height="200" alt="medal" title="The UC Davis Medal recognizes individuals of rare accomplishment.  (Karin Higgins / UC Davis)" /></div></div></div>    </div>
-  
+
   <div class="media__body">
           <header>
                 <h3 class="node__title"><a href="news/michael-chapman-john-and-lois-crowe-and-gurdev-khush-be-honored-uc-davis-medal.html" rel="bookmark">Michael Chapman, John and Lois Crowe, and Gurdev Khush to Be Honored With UC Davis Medal</a></h3>
         <span property="schema:name" content="Michael Chapman, John and Lois Crowe, and Gurdev Khush to Be Honored With UC Davis Medal" class="rdf-meta element-hidden"></span>      </header>
-    
+
           <footer class="node__submitted">May 1, 2018</footer>
-    
+
     <div class="node__content">
       <span rel="schema:url" resource="/news/michael-chapman-john-and-lois-crowe-and-gurdev-khush-be-honored-uc-davis-medal" class="rdf-meta element-hidden"></span><span property="schema:name" content="Michael Chapman, John and Lois Crowe, and Gurdev Khush to Be Honored With UC Davis Medal" class="rdf-meta element-hidden"></span>    </div>
   </div>
@@ -602,14 +607,14 @@
     <article about="/news/memoriam-bruce-white-college-engineering" typeof="schema:Article sioc:Item foaf:Document" role="article" class="node node--sitefarm-article node--media-list node--sitefarm-article--media-list vm-media-list media node--article category-brand--">
       <div class="media__figure category-brand__thumbnail">
       <div class="field field--name-field-featured-image field--type-image field--label-hidden"><div class="field__items"><div class="field__item even" rel="schema:image" resource="sites/default/files/styles/panopoly_image_square/public/images/article/bruce-white-368pc68f6.jpg?itok=4BZ2HWHL"><img class="panopoly-image-square" typeof="foaf:Image" src="sites/default/files/styles/panopoly_image_square/public/images/article/bruce-white-368pc68f6.jpg?itok=4BZ2HWHL" width="200" height="200" alt="Bruce White mugshot for index" /></div></div></div>    </div>
-  
+
   <div class="media__body">
           <header>
                 <h3 class="node__title"><a href="news/memoriam-bruce-white-college-engineering.html" rel="bookmark">IN MEMORIAM: Bruce White of College of Engineering</a></h3>
         <span property="schema:name" content="IN MEMORIAM: Bruce White of College of Engineering" class="rdf-meta element-hidden"></span>      </header>
-    
+
           <footer class="node__submitted">April 30, 2018</footer>
-    
+
     <div class="node__content">
       <span rel="schema:url" resource="/news/memoriam-bruce-white-college-engineering" class="rdf-meta element-hidden"></span><span property="schema:name" content="IN MEMORIAM: Bruce White of College of Engineering" class="rdf-meta element-hidden"></span>    </div>
   </div>
@@ -619,14 +624,14 @@
     <article about="/news/memoriam-john-d-kemper-engineering-dean-1969-83" typeof="schema:Article sioc:Item foaf:Document" role="article" class="node node--sitefarm-article node--media-list node--sitefarm-article--media-list vm-media-list media node--article category-brand--">
       <div class="media__figure category-brand__thumbnail">
       <div class="field field--name-field-featured-image field--type-image field--label-hidden"><div class="field__items"><div class="field__item even" rel="schema:image" resource="sites/default/files/styles/panopoly_image_square/public/images/article/john-d-kemper-environ-9252f2f.jpg?itok=i2ObYHwq"><img class="panopoly-image-square" typeof="foaf:Image" src="sites/default/files/styles/panopoly_image_square/public/images/article/john-d-kemper-environ-9252f2f.jpg?itok=i2ObYHwq" width="200" height="200" alt="John D. Kemper on balcony, scenery behind" title="John D. Kemper in retirement in Medford, Oregon." /></div></div></div>    </div>
-  
+
   <div class="media__body">
           <header>
                 <h3 class="node__title"><a href="news/memoriam-john-d-kemper-engineering-dean-1969-83.html" rel="bookmark">IN MEMORIAM: John D. Kemper, Engineering Dean, 1969-83</a></h3>
         <span property="schema:name" content="IN MEMORIAM: John D. Kemper, Engineering Dean, 1969-83" class="rdf-meta element-hidden"></span>      </header>
-    
+
           <footer class="node__submitted">April 30, 2018</footer>
-    
+
     <div class="node__content">
       <span rel="schema:url" resource="/news/memoriam-john-d-kemper-engineering-dean-1969-83" class="rdf-meta element-hidden"></span><span property="schema:name" content="IN MEMORIAM: John D. Kemper, Engineering Dean, 1969-83" class="rdf-meta element-hidden"></span>    </div>
   </div>
@@ -636,97 +641,99 @@
     <article about="/news/laurels-fellows-american-council-learned-societies" typeof="schema:Article sioc:Item foaf:Document" role="article" class="node node--sitefarm-article node--media-list node--sitefarm-article--media-list vm-media-list media node--article category-brand--">
       <div class="media__figure category-brand__thumbnail">
       <div class="field field--name-field-featured-image field--type-image field--label-hidden"><div class="field__items"><div class="field__item even" rel="schema:image" resource="sites/default/files/styles/panopoly_image_square/public/images/article/acls-combo3831b.jpg?itok=LnUbfT6N"><img class="panopoly-image-square" typeof="foaf:Image" src="sites/default/files/styles/panopoly_image_square/public/images/article/acls-combo3831b.jpg?itok=LnUbfT6N" width="200" height="200" alt="Hsuan L. Hsu, Cecilia M. Tsu and Charles F. &quot;Churck&quot; Walker mugshots" /></div></div></div>    </div>
-  
+
   <div class="media__body">
           <header>
                 <h3 class="node__title"><a href="news/laurels-fellows-american-council-learned-societies.html" rel="bookmark">LAURELS: Fellows of the American Council of Learned Societies</a></h3>
         <span property="schema:name" content="LAURELS: Fellows of the American Council of Learned Societies" class="rdf-meta element-hidden"></span>      </header>
-    
+
           <footer class="node__submitted">April 30, 2018</footer>
-    
+
     <div class="node__content">
       <span rel="schema:url" resource="/news/laurels-fellows-american-council-learned-societies" class="rdf-meta element-hidden"></span><span property="schema:name" content="LAURELS: Fellows of the American Council of Learned Societies" class="rdf-meta element-hidden"></span>    </div>
   </div>
 </article>
   </div>
     </div>
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
 </div>  </div>
     </div>
 <div class="panel-pane pane-fieldable-panels-pane pane-vuuid-59edece6-49ac-4a2e-8be4-2a2151c2df0d box--small category-brand--admin-blue pane-title--icon pane-title--bullhorn panel-pane--flush pane-bundle-text">
-  
+
       <h2 class="pane-title">
     <a href="calendar/index.html">Events</a>  </h2>
-    
+
     <div class="pane-content ">
     <div class="fieldable-panels-pane" class="fieldable-panels-pane">
     </div>
   </div>
     </div>
 <div class="panel-pane pane-trumba-promo-ctrl-spud box pane-title--plain">
-  
-      
+
+
     <div class="pane-content ">
+      <input id="clickMeForError" type="button" value="clickme" onclick="
+      triggerError();" />
     <div class="trumba-spud" id="trumba-promo-ctrl-spud" data-trumba-spud="trumba-promo-ctrl-spud"></div>
   </div>
     </div>
 <div class="panel-pane pane-fieldable-panels-pane pane-uuid-df4b0edc-983b-472f-ab80-a01a0998644a box--small category-brand--admin-blue pane-title--icon pane-title--mustang panel-pane--flush pane-bundle-text">
-  
+
       <h2 class="pane-title">
     <a href="http://www.ucdavisaggies.com/">UC Davis Athletics</a>  </h2>
-    
+
     <div class="pane-content ">
     <div class="fieldable-panels-pane" class="fieldable-panels-pane">
     </div>
   </div>
     </div>
 <div class="panel-pane pane-trumba-open-spud box category-brand--admin-blue pane-title--plain pane-title--bullhorn">
-  
-      
+
+
     <div class="pane-content ">
     <div class="trumba-spud" id="trumba-open-spud" data-trumba-spud="trumba-open-spud"></div>
   </div>
     </div>
 <div class="panel-pane pane-views-panes pane-panopoly-widgets-general-content-list-of-content box category-brand--admin-blue pane-title--icon pane-title--feed">
-  
+
       <h2 class="pane-title">
     <a href="majors/blog/index.html">Latest Majors Blog Posts</a>  </h2>
-    
+
     <div class="pane-content ">
     <div class="view view-panopoly-widgets-general-content view-id-panopoly_widgets_general_content view-display-id-list_of_content view-dom-id-46fad03363024e2d53f539590cf8c68a">
-        
-  
-  
+
+
+
       <div class="view-content">
         <div class="views-row views-row-1 views-row-odd views-row-first clearfix">
-      
-  <div class="views-field views-field-field-featured-image">        <div class="field-content listing-image"><a href="majors/blog/career-paths/five-great-government-jobs.html"><img class="panopoly-image-quarter" typeof="foaf:Image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="sites/default/files/styles/panopoly_image_quarter/public/blog_post_featured_images/thumbnail-ext1e4f.jpg?itok=3UKknk8X" alt="Man standing in front of Capitol" /></a></div>  </div>  
+
+  <div class="views-field views-field-field-featured-image">        <div class="field-content listing-image"><a href="majors/blog/career-paths/five-great-government-jobs.html"><img class="panopoly-image-quarter" typeof="foaf:Image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="sites/default/files/styles/panopoly_image_quarter/public/blog_post_featured_images/thumbnail-ext1e4f.jpg?itok=3UKknk8X" alt="Man standing in front of Capitol" /></a></div>  </div>
   <div class="views-field views-field-title">        <span class="field-content"><a href="majors/blog/career-paths/five-great-government-jobs.html">5 Great Government Jobs and How to Prepare for Them</a></span>  </div>  </div>
   <div class="views-row views-row-2 views-row-even clearfix">
-      
-  <div class="views-field views-field-field-featured-image">        <div class="field-content listing-image"><a href="majors/blog/exploring-options/female-majority-clubs.html"><img class="panopoly-image-quarter" typeof="foaf:Image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="sites/default/files/styles/panopoly_image_quarter/public/blog_post_featured_images/dwib-thumbnaild31b.jpg?itok=p0rM1AS4" alt="Two students from Davis Women in Business club pose with achievement certificates." /></a></div>  </div>  
+
+  <div class="views-field views-field-field-featured-image">        <div class="field-content listing-image"><a href="majors/blog/exploring-options/female-majority-clubs.html"><img class="panopoly-image-quarter" typeof="foaf:Image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="sites/default/files/styles/panopoly_image_quarter/public/blog_post_featured_images/dwib-thumbnaild31b.jpg?itok=p0rM1AS4" alt="Two students from Davis Women in Business club pose with achievement certificates." /></a></div>  </div>
   <div class="views-field views-field-title">        <span class="field-content"><a href="majors/blog/exploring-options/female-majority-clubs.html">Female-Majority Student Clubs Offer Support and Career Development</a></span>  </div>  </div>
   <div class="views-row views-row-3 views-row-odd views-row-last clearfix">
-      
-  <div class="views-field views-field-field-featured-image">        <div class="field-content listing-image"><a href="majors/american-studies/what-can-i-do-with-my-american-studies-major.html"><img class="panopoly-image-quarter" typeof="foaf:Image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="sites/default/files/styles/panopoly_image_quarter/public/blog_post_featured_images/as-thumbnail8078.jpg?itok=xz6LiFwa" alt="Students and faculty from the Department of American studies pose." /></a></div>  </div>  
+
+  <div class="views-field views-field-field-featured-image">        <div class="field-content listing-image"><a href="majors/american-studies/what-can-i-do-with-my-american-studies-major.html"><img class="panopoly-image-quarter" typeof="foaf:Image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="sites/default/files/styles/panopoly_image_quarter/public/blog_post_featured_images/as-thumbnail8078.jpg?itok=xz6LiFwa" alt="Students and faculty from the Department of American studies pose." /></a></div>  </div>
   <div class="views-field views-field-title">        <span class="field-content"><a href="majors/american-studies/what-can-i-do-with-my-american-studies-major.html"> American Studies Majors Turn Passions to Professions</a></span>  </div>  </div>
     </div>
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
 </div>  </div>
     </div>
 <div class="panel-pane pane-fieldable-panels-pane pane-vuuid-ac9f7328-ba69-4a3f-94e1-351cf25d5107 pane-bundle-ucdedu-focal-link box--flush box pane-title--plain">
-  
-      
+
+
     <div class="pane-content ">
     <a href="about/locations-maps-parking.html" class="fieldable-panels-pane focal-link">
   <div class="focal-link__figure ">
@@ -738,8 +745,8 @@
   </div>
     </div>
 <div class="panel-pane pane-fieldable-panels-pane pane-current-15 pane-bundle-ucdedu-focal-link box--flush box pane-title--plain">
-  
-      
+
+
     <div class="pane-content ">
     <a href="http://www.youvisit.com/tour/ucdavis?pl=v" class="fieldable-panels-pane focal-link">
   <div class="focal-link__figure ">
@@ -751,8 +758,8 @@
   </div>
     </div>
 <div class="panel-pane pane-fieldable-panels-pane pane-current-16 pane-bundle-ucdedu-focal-link box--flush box pane-title--plain">
-  
-      
+
+
     <div class="pane-content ">
     <a href="admissions/undergraduate/more-info.html" class="fieldable-panels-pane focal-link">
   <div class="focal-link__figure ">
@@ -764,8 +771,8 @@
   </div>
     </div>
 <div class="panel-pane pane-fieldable-panels-pane pane-vuuid-7aefeaad-0a47-4746-a18d-c03c15c0fc79 pane-bundle-ucdedu-focal-link box--flush box pane-title--plain">
-  
-      
+
+
     <div class="pane-content ">
     <a href="http://www.alumni.ucdavis.edu/membership" class="fieldable-panels-pane focal-link">
   <div class="focal-link__figure ">
@@ -777,8 +784,8 @@
   </div>
     </div>
 <div class="panel-pane pane-fieldable-panels-pane pane-current-18 pane-bundle-ucdedu-focal-link box--flush box pane-title--plain">
-  
-      
+
+
     <div class="pane-content ">
     <a href="http://giving.ucdavis.edu/" class="fieldable-panels-pane focal-link">
   <div class="focal-link__figure ">
@@ -794,21 +801,21 @@
       <div class="col-md-8 radix-layouts-content panel-panel">
         <div class="panel-panel-inner">
           <div class="panel-pane pane-fieldable-panels-pane pane-vuuid-4a3fb782-d1d8-4009-890f-f6078ba99b12 box--flush category-brand--admin-blue pane-title--plain pane-title--bullhorn pane-bundle-text">
-  
-      
+
+
     <div class="pane-content ">
     <div class="fieldable-panels-pane" class="fieldable-panels-pane">
     <div class="field field--name-field-basic-text-text field--type-text-long field--label-hidden body-text"><div class="field__items"><div class="field__item even"><a href="https://myadmissions.ucdavis.edu/applicants/"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="sites/default/files/upload/users/user1296/welcome-uc-davis-transfer-class-2020.jpg" alt="Welcome UC Davis Transfer Class of 2020! Check your admission status now!" width="1200" height="626" /></a></div></div></div></div>
   </div>
     </div>
 <div class="panel-pane pane-views-panes pane-sitefarm-articles-single-article box--flush category-brand--wine-grape pane-title--plain pane-title--bullhorn">
-  
-      
+
+
     <div class="pane-content ">
     <div class="view view-sitefarm-articles view-id-sitefarm_articles view-display-id-single_article view-dom-id-d23a7270a0ebd05d3ad259f49de9fe8c">
-        
-  
-  
+
+
+
       <div class="view-content">
         <div class="views-row views-row-1 views-row-odd views-row-first views-row-last clearfix">
     <a about="/news/8-stem-contests-start-campus" typeof="schema:Article sioc:Item foaf:Document" role="article" class="node node--sitefarm-article node--spotlight node--sitefarm-article--spotlight vm-spotlight node--article category-brand--western-redbud" href="news/8-stem-contests-start-campus.html" rel="bookmark">
@@ -826,20 +833,20 @@
 </a>
   </div>
     </div>
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
 </div>  </div>
     </div>
 <div class="panel-pane pane-fieldable-panels-pane pane-vuuid-0cca23f6-762c-46f2-bcb5-927cded50bd5 pane-bundle-ucdedu-vertical-link-fpp box--flush bg-transparent box pane-title--plain">
-  
-      
+
+
     <div class="pane-content ">
     <div class="fieldable-panels-pane" class="fieldable-panels-pane">
-    
+
 <div class="paragraphs-items paragraphs-items-field-ucdedu-vertical-link-para paragraphs-items-field-ucdedu-vertical-link-para-full paragraphs-items-full" class="paragraphs-items paragraphs-items-field-ucdedu-vertical-link-para paragraphs-items-field-ucdedu-vertical-link-para-full paragraphs-items-full">
   <div class="field field--name-field-ucdedu-vertical-link-para field--type-paragraphs field--label-hidden"><div class="field__items achievement-badges pack"><div class="field__item pack__item even"><a href="about/rankings/index.html" class="vertical-link entity entity-paragraphs-item paragraphs-item-ucdedu-vertical-link-bundle"  about="" typeof="" class="entity entity-paragraphs-item paragraphs-item-ucdedu-vertical-link-bundle">
     <div class="field field--name-field-ucdedu-vertical-link-image field--type-image field--label-hidden vertical-link__figure"><img typeof="foaf:Image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="sites/default/files/vertical-links/badge-veterinary_0.png" width="162" height="166" alt="Veterinary medicine" /></div><div class="field field--name-field-ucdedu-vertical-link-title field--type-text field--label-hidden vertical-link__body"><strong>Ranked 1st in the world for veterinary medicine</strong></div></a>
@@ -851,239 +858,239 @@
   </div>
     </div>
 <div class="panel-pane pane-views-panes pane-ucdedu-image-slider-panel-pane-1 box--flush category-brand--admin-blue pane-title--plain pane-title--bullhorn">
-  
-      
+
+
     <div class="pane-content ">
     <div class="view view-ucdedu-image-slider view-id-ucdedu_image_slider view-display-id-panel_pane_1 view-dom-id-86838f0ebb7d4d4aac8f0df75962d600">
-        
-  
-  
+
+
+
       <div class="view-content">
         <div>
-      
+
   <div class="views-field views-field-field-ucdedu-gallery-images">        <div class="field-content"><div id="slick-node-527-ucd-image-gallery-field-ucdedu-gallery-images-1" class="slick slick--view--ucdedu-image-slider slick--view--ucdedu-image-slider--panel-pane-1 slick--skin--default slick--optionset--ucdedu-slideshow slideshow slick--slider slick--center">
       <div id="slick-node-527-ucd-image-gallery-field-ucdedu-gallery-images-1-slider" class="slick__slider" data-slick="{&quot;mobileFirst&quot;:true,&quot;centerMode&quot;:true,&quot;fade&quot;:true,&quot;lazyLoad&quot;:&quot;progressive&quot;}">
-  
+
           <div class="slideshow__item slick__slide slide slide--0">      <div class="slide__content">      <div class="slide__media">      <div class="slick-media media media--image">
 <img class="slick__image lazy" width="1000" height="563" alt="Trombonists in the Cal Aggie Marching Band-uh " title="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy="sites/default/files/styles/ucdedu_slideshow/public/image_gallery/cal-aggie-band-uh-26210.jpg?itok=0IQOoq35" /><noscript><img typeof="foaf:Image" src="sites/default/files/styles/ucdedu_slideshow/public/image_gallery/cal-aggie-band-uh-26210.jpg?itok=0IQOoq35" width="1000" height="563" alt="Trombonists in the Cal Aggie Marching Band-uh " title="" /></noscript>
 </div>
             </div>
               <div class="slideshow__text">
                       <div class="slideshow__title"><span class="slideshow__knockout">Picture</span> UC Davis</div>
-          
-                      
-            
+
+
+
                   </div>
                 </div>  </div>          <div class="slideshow__item slick__slide slide slide--1">      <div class="slide__content">      <div class="slide__media">      <div class="slick-media media media--image">
 <img class="slick__image lazy" width="1000" height="563" alt="Two female students bike through the Tercero Residence Hall area" title="UC Davis housing includes residence halls, Student Housing apartments, campus apartments and cooperatives." src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy="sites/default/files/styles/ucdedu_slideshow/public/image_gallery/20120928_tercero_120e7f7.jpg?itok=MDpr27Qm" /></div>
             </div>
               <div class="slideshow__text">
-          
-                      
+
+
                           <div class="slideshow__caption">
-                
+
                                   <div class="slide__title">UC Davis housing includes residence halls, Student Housing apartments, campus apartments and cooperatives.</div>
-                
-                
-                
-                
+
+
+
+
                                </div>
-            
+
                   </div>
                 </div>  </div>          <div class="slideshow__item slick__slide slide slide--2">      <div class="slide__content">      <div class="slide__media">      <div class="slick-media media media--image">
 <img class="slick__image lazy" width="1000" height="563" alt="Several students lift weights inside of the UC Davis Activities and Recreation Center" title="Use your unlimited access to the Activities and Recreation Center by keeping fit in group classes, dancing, martial arts, personal training, racketball and more." src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy="sites/default/files/styles/ucdedu_slideshow/public/image_gallery/arc_0c03f.jpg?itok=rNZ21zjN" /></div>
             </div>
               <div class="slideshow__text">
-          
-                      
+
+
                           <div class="slideshow__caption">
-                
+
                                   <div class="slide__title">Use your unlimited access to the Activities and Recreation Center by keeping fit in group classes, dancing, martial arts, personal training, racketball and more.</div>
-                
-                
-                
-                
+
+
+
+
                                </div>
-            
+
                   </div>
                 </div>  </div>          <div class="slideshow__item slick__slide slide slide--3">      <div class="slide__content">      <div class="slide__media">      <div class="slick-media media media--image">
 <img class="slick__image lazy" width="1000" height="563" alt="A male student rides a  mechanical bull on the quad during UC Davis Buzz festivities" title="The fall Week of Orientation and Welcome puts you in the groove with many introductions to UC Davis, ending with the Buzz party." src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy="sites/default/files/styles/ucdedu_slideshow/public/image_gallery/20130927_buzz_154c3d9.jpg?itok=VU8ZOgVb" /></div>
             </div>
               <div class="slideshow__text">
-          
-                      
+
+
                           <div class="slideshow__caption">
-                
+
                                   <div class="slide__title">The fall Week of Orientation and Welcome puts you in the groove with many introductions to UC Davis, ending with the Buzz party.</div>
-                
-                
-                
-                
+
+
+
+
                                </div>
-            
+
                   </div>
                 </div>  </div>          <div class="slideshow__item slick__slide slide slide--4">      <div class="slide__content">      <div class="slide__media">      <div class="slick-media media media--image">
 <img class="slick__image lazy" width="1000" height="563" alt="A female student studies on the grass in the UC Davis Arboretum" title="Explore 100 acres of flora and fauna in the UC Davis Arboretum, including a secret garden near the horse barn and redwood grove. " src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy="sites/default/files/styles/ucdedu_slideshow/public/image_gallery/20111114_arboretum_034cd97.jpg?itok=88ufna0X" /></div>
             </div>
               <div class="slideshow__text">
-          
-                      
+
+
                           <div class="slideshow__caption">
-                
+
                                   <div class="slide__title">Explore 100 acres of flora and fauna in the UC Davis Arboretum, including a secret garden near the horse barn and redwood grove. </div>
-                
-                
-                
-                
+
+
+
+
                                </div>
-            
+
                   </div>
                 </div>  </div>          <div class="slideshow__item slick__slide slide slide--5">      <div class="slide__content">      <div class="slide__media">      <div class="slick-media media media--image">
 <img class="slick__image lazy" width="1000" height="563" alt="A few students artfully leap into a pool in the West Village portion of the UC Davis Campus" title="West Village qualifies as a UC Davis hot spot for transfer students. It’s the largest planned zero net energy community in the U.S." src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy="sites/default/files/styles/ucdedu_slideshow/public/image_gallery/davis_west_village-46918b.jpg?itok=Zti_X-mi" /></div>
             </div>
               <div class="slideshow__text">
-          
-                      
+
+
                           <div class="slideshow__caption">
-                
+
                                   <div class="slide__title">West Village qualifies as a UC Davis hot spot for transfer students. It’s the largest planned zero net energy community in the U.S.</div>
-                
-                
-                
-                
+
+
+
+
                                </div>
-            
+
                   </div>
                 </div>  </div>          <div class="slideshow__item slick__slide slide slide--6">      <div class="slide__content">      <div class="slide__media">      <div class="slick-media media media--image">
 <img class="slick__image lazy" width="1000" height="563" alt="A busy barista whips up a coffee in our Memorial Union Coffee House" title="Known for great pizza, Tex-Mex and specialty coffees, our CoHo is the place for meeting and eating — not to mention studying. " src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy="sites/default/files/styles/ucdedu_slideshow/public/image_gallery/20101013_coho_138e49f.jpg?itok=lEbhqyVD" /></div>
             </div>
               <div class="slideshow__text">
-          
-                      
+
+
                           <div class="slideshow__caption">
-                
+
                                   <div class="slide__title">Known for great pizza, Tex-Mex and specialty coffees, our CoHo is the place for meeting and eating — not to mention studying. </div>
-                
-                
-                
-                
+
+
+
+
                                </div>
-            
+
                   </div>
                 </div>  </div>          <div class="slideshow__item slick__slide slide slide--7">      <div class="slide__content">      <div class="slide__media">      <div class="slick-media media media--image">
 <img class="slick__image lazy" width="1000" height="563" alt="The entrance to the UC Davis Community Center" title="Study with friends or take a class at the Student Community Center. You can gain leadership skills and learn about culture, identity and community." src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy="sites/default/files/styles/ucdedu_slideshow/public/image_gallery/20120106_students_center_84597999.jpg?itok=Cu_W7bsi" /></div>
             </div>
               <div class="slideshow__text">
-          
-                      
+
+
                           <div class="slideshow__caption">
-                
+
                                   <div class="slide__title">Study with friends or take a class at the Student Community Center. You can gain leadership skills and learn about culture, identity and community.</div>
-                
-                
-                
-                
+
+
+
+
                                </div>
-            
+
                   </div>
                 </div>  </div>          <div class="slideshow__item slick__slide slide slide--8">      <div class="slide__content">      <div class="slide__media">      <div class="slick-media media media--image">
 <img class="slick__image lazy" width="1000" height="563" alt="Two female students enjoy lunch in Segundo Dining Commons" title="Our award-winning residential dining commons offers a delicious array of choices to suit all tastes, including vegan and vegetarian dishes." src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy="sites/default/files/styles/ucdedu_slideshow/public/image_gallery/20130612_segundodc_017bf29.jpg?itok=4o3PlUvx" /></div>
             </div>
               <div class="slideshow__text">
-          
-                      
+
+
                           <div class="slideshow__caption">
-                
+
                                   <div class="slide__title">Our award-winning residential dining commons offers a delicious array of choices to suit all tastes, including vegan and vegetarian dishes.</div>
-                
-                
-                
-                
+
+
+
+
                                </div>
-            
+
                   </div>
                 </div>  </div>          <div class="slideshow__item slick__slide slide slide--9">      <div class="slide__content">      <div class="slide__media">      <div class="slick-media media media--image">
 <img class="slick__image lazy" width="1000" height="563" alt="Two female students purchase fresh produce at the Davis Farmers Market" title="Shop weekly for locally grown food at the Davis Farmers Market, continually voted among USA Today’s top 10 farmers markets in the nation." src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy="sites/default/files/styles/ucdedu_slideshow/public/image_gallery/farmarb718.jpg?itok=ub9dowTa" /></div>
             </div>
               <div class="slideshow__text">
-          
-                      
+
+
                           <div class="slideshow__caption">
-                
+
                                   <div class="slide__title">Shop weekly for locally grown food at the Davis Farmers Market, continually voted among USA Today’s top 10 farmers markets in the nation.</div>
-                
-                
-                
-                
+
+
+
+
                                </div>
-            
+
                   </div>
                 </div>  </div>          <div class="slideshow__item slick__slide slide slide--10">      <div class="slide__content">      <div class="slide__media">      <div class="slick-media media media--image">
 <img class="slick__image lazy" width="1000" height="563" alt="A packed crowd cheers on the Men&#039;s Basketball team in the UC Davis Pavilion" title="By joining Aggie Pack, you can participate in the largest university spirit organization in the nation and support your favorite teams." src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy="sites/default/files/styles/ucdedu_slideshow/public/image_gallery/espn_basketball_crowdshot7d95.jpg?itok=-U8fLzJw" /></div>
             </div>
               <div class="slideshow__text">
-          
-                      
+
+
                           <div class="slideshow__caption">
-                
+
                                   <div class="slide__title">By joining Aggie Pack, you can participate in the largest university spirit organization in the nation and support your favorite teams.</div>
-                
-                
-                
-                
+
+
+
+
                                </div>
-            
+
                   </div>
                 </div>  </div>          <div class="slideshow__item slick__slide slide slide--11">      <div class="slide__content">      <div class="slide__media">      <div class="slick-media media media--image">
 <img class="slick__image lazy" width="1000" height="563" alt="A group of pajama clad students celebrate at the Davis train station" title="Put on your pajamas  for our Pajamarino and rally with the Band-Uh at the Davis Amtrak Station to welcome Aggie alumni before our homecoming football game. " src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy="sites/default/files/styles/ucdedu_slideshow/public/image_gallery/20121005_pajamarino_288bd9c.jpg?itok=EzIFFVWb" /></div>
             </div>
               <div class="slideshow__text">
-          
-                      
+
+
                           <div class="slideshow__caption">
-                
+
                                   <div class="slide__title">Put on your pajamas  for our Pajamarino and rally with the Band-Uh at the Davis Amtrak Station to welcome Aggie alumni before our homecoming football game. </div>
-                
-                
-                
-                
+
+
+
+
                                </div>
-            
+
                   </div>
                 </div>  </div>          <div class="slideshow__item slick__slide slide slide--12">      <div class="slide__content">      <div class="slide__media">      <div class="slick-media media media--image">
 <img class="slick__image lazy" width="1000" height="563" alt="A UC Davis cheerleader pumps up the crowd at the UC Davis Football homecoming game" title="UC Davis is a great place for sports. Our intercollegiate varsity teams, intramural sports and on-campus clubs deliver competition and fun." src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy="sites/default/files/styles/ucdedu_slideshow/public/image_gallery/stadium2768.jpg?itok=yxd3ZAt7" /></div>
             </div>
               <div class="slideshow__text">
-          
-                      
+
+
                           <div class="slideshow__caption">
-                
+
                                   <div class="slide__title">UC Davis is a great place for sports. Our intercollegiate varsity teams, intramural sports and on-campus clubs deliver competition and fun.</div>
-                
-                
-                
-                
+
+
+
+
                                </div>
-            
+
                   </div>
-                </div>  </div>    
+                </div>  </div>
       </div>
     <nav class="slick__arrow">
       <button type="button" data-role="none" class="slick-prev" aria-label="previous">Previous</button>            <button type="button" data-role="none" class="slick-next" aria-label="next">Next</button>    </nav>
   </div>
 </div>  </div>  </div>
     </div>
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
 </div>  </div>
     </div>
 <div class="panel-pane pane-fieldable-panels-pane pane-vuuid-320ed639-6928-482a-99f1-9991700d93b1 box--flush category-brand--california-poppy l-sibling-grid--half pane-bundle-ucdedu-marketing-highlight">
-  
-      
+
+
     <div class="pane-content ">
     <a href="campus-life/explore-campus/index.html#craft-center" class="fieldable-panels-pane marketing-highlight marketing-highlight--featured">
   <div class="marketing-highlight__image">
@@ -1098,8 +1105,8 @@
   </div>
     </div>
 <div class="panel-pane pane-fieldable-panels-pane pane-vuuid-52f8cf36-16f0-492a-8d8f-13bbef85d8e4 box--flush category-brand--western-redbud l-sibling-grid--half pane-bundle-ucdedu-marketing-highlight">
-  
-      
+
+
     <div class="pane-content ">
     <a href="about/facts/fast-facts/index.html#beer-science" class="fieldable-panels-pane marketing-highlight marketing-highlight--featured">
   <div class="marketing-highlight__image">
@@ -1120,15 +1127,15 @@
     <div class="field field--name-field-video-file field--type-file field--label-hidden"><div class="field__items"><div class="field__item even"><div id="file-16037" class="file file-video file-video-youtube" class="file file-video file-video-youtube">
 
         <h2 class="element-invisible"><a href="files/uc-davis-map.html">UC Davis - On The Map</a></h2>
-    
-  
+
+
   <div class="content">
     <div class="media-youtube-video media-youtube-1">
   <iframe class="media-youtube-player" width="640" height="390" title="UC Davis - On The Map" src="https://www.youtube.com/embed/WCLKzB0bocc?wmode=opaque&amp;modestbranding=1&amp;rel=0" frameborder="0" allowfullscreen>Video of UC Davis - On The Map</iframe>
 </div>
   </div>
 
-  
+
 </div>
 </div></div></div></div>
   </div>
@@ -1136,17 +1143,17 @@
     <div class="vm-featured-video__body category-brand__background">
     <h3 class="vm-featured-video__title"><a href="about/locations-maps-parking.html">UC Davis on the Map</a></h3>
     <div class="vm-featured-video__meta">
-      
-      
-      
+
+
+
           </div>
   </div>
   </div>
 <div class="panel-pane pane-social-follow-links box--flush bg-transparent panel-pane--flush box pane-title--plain">
-  
-      
+
+
     <div class="pane-content ">
-    
+
 <div class="social-follow">
   <h3 class="pane-title">Follow UC Davis</h3>
   <ul class="pack">
@@ -1177,7 +1184,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="row">
       <div class="col-md-12 radix-layouts-footer panel-panel">
         <div class="panel-panel-inner">
@@ -1185,7 +1192,7 @@
       </div>
     </div>
   </div>
- 
+
 </div><!-- /.moscone -->
               </div>
 
@@ -1196,7 +1203,7 @@
     <div class="l-container">
         <div class="l-region l-region--footer pack pack--small footer__navs">
     <nav id="block-menu-menu-footer-primary" role="navigation" class="pack__item footer-nav">
-      
+
   <div class="footer-nav__logo"><a href="index.html" class="active"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="sites/all/themes/ucd_one/images/uc-logo-gold.svg" class="logo" alt="UC Davis Logo" /></a></div><ul class="menu"><li class="first leaf"><a href="http://www.ucdmc.ucdavis.edu/" title="">UC Davis Health</a></li>
 <li class="leaf"><a href="http://www.vetmed.ucdavis.edu/vmth/" title="">Veterinary Medicine</a></li>
 <li class="leaf"><a href="https://extension.ucdavis.edu/" title="">UC Davis Extension</a></li>
@@ -1207,7 +1214,7 @@
 </ul></nav>
 <nav id="block-menu-menu-footer-students" role="navigation" class="pack__item footer-nav">
         <h2 class="block__title footer-nav__title">Students</h2>
-    
+
   <ul class="menu"><li class="first leaf"><a href="http://orientation.ucdavis.edu/" title="">Orientation</a></li>
 <li class="leaf"><a href="students/resources/index.html#footer" title="">Student Resources</a></li>
 <li class="leaf"><a href="https://gradstudies.ucdavis.edu/current-students" title="">Graduate Students</a></li>
@@ -1218,7 +1225,7 @@
 </ul></nav>
 <nav id="block-menu-menu-footer-alumni" role="navigation" class="pack__item footer-nav">
         <h2 class="block__title footer-nav__title">Alumni</h2>
-    
+
   <ul class="menu"><li class="first leaf"><a href="http://www.alumni.ucdavis.edu/" title="">Cal Aggie Alumni Association</a></li>
 <li class="leaf"><a href="http://www.alumni.ucdavis.edu/benefits/career-connections" title="">Career Connections</a></li>
 <li class="leaf"><a href="http://www.alumni.ucdavis.edu/benefits/" title="">Member Benefits</a></li>
@@ -1227,7 +1234,7 @@
 </ul></nav>
 <nav id="block-menu-menu-footer-faculty" role="navigation" class="pack__item footer-nav">
         <h2 class="block__title footer-nav__title">Faculty</h2>
-    
+
   <ul class="menu"><li class="first leaf"><a href="faculty/resources/index.html#footer" title="">Resources</a></li>
 <li class="leaf"><a href="faculty/resources/teaching/index.html#footer" title="">Teaching</a></li>
 <li class="leaf"><a href="research/index.html#footer" title="">Research</a></li>
@@ -1236,7 +1243,7 @@
 </ul></nav>
 <nav id="block-menu-menu-footer-staff" role="navigation" class="pack__item footer-nav">
         <h2 class="block__title footer-nav__title">Staff</h2>
-    
+
   <ul class="menu"><li class="first leaf"><a href="staff/resources/index.html#footer" title="">Resources</a></li>
 <li class="leaf"><a href="http://sdps.ucdavis.edu/" title="">Training</a></li>
 <li class="leaf"><a href="jobs/benefits/index.html#footer" title="">Benefits</a></li>
@@ -1260,9 +1267,9 @@
   <li><a href="help.html">Help</a></li>
 
       <li><a href="contact.html">Questions or comments?</a></li>
-  
+
       <li><a href="help/privacy-accessibility.html">Privacy & Accessibility</a></li>
-  
+
   <li><a href="http://occr.ucdavis.edu/poc/">Principles of Community</a></li>
   <li><a href="http://www.universityofcalifornia.edu/">University of California</a></li>
   <li><a href="sitemap.html">Sitemap</a></li>
